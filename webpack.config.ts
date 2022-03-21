@@ -145,24 +145,6 @@ export default (_: unknown, { mode }: WebpackOptionsNormalized): Configuration[]
                         },
                     },
                 }),
-                new CopyPlugin({
-                    patterns: [
-                        {
-                            from: `src/manifest(|.${mode}|.${browser}).json`,
-                            to: 'manifest.json',
-                            transformAll: (assets: { data: Buffer }[]) => {
-                                const combined = merge(
-                                    {},
-                                    ...assets
-                                        .map(asset => asset.data.toString('utf-8'))
-                                        .filter(data => data.trim().length > 0)
-                                        .map(data => JSON.parse(data))
-                                );
-                                return JSON.stringify(combined, null, 2);
-                            },
-                        },
-                    ],
-                }),
             ],
         });
     });

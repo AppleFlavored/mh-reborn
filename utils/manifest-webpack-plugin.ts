@@ -1,4 +1,3 @@
-import path from "path";
 import webpack, { Compiler } from "webpack";
 
 const pluginName = "ManifestWebpackPlugin";
