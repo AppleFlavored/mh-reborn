@@ -1,3 +1,6 @@
+// This file is from:
+// https://github.com/tallycash/extension/blob/main/build-utils/web-extension-archive-webpack-plugin.ts
+
 import fs from "fs"
 import path from "path"
 import archiver from "archiver"

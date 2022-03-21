@@ -5,6 +5,7 @@ import CopyPlugin from 'copy-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import WebExtensionArchivePlugin from './utils/web-extension-archive-webpack-plugin';
+import ManifestWebpackPlugin from './utils/manifest-webpack-plugin';
 
 const browserTargets = ["firefox", "chrome"];
 
@@ -111,6 +112,39 @@ export default (_: unknown, { mode }: WebpackOptionsNormalized): Configuration[]
                 path: buildPath,
             },
             plugins: [
+                new ManifestWebpackPlugin({
+                    targetBrowser: browser,
+
+                    manifest: {
+                        name: 'Minehut Reborn',
+                        version: '0.1.0',
+                        author: 'AppleFlavored',
+                        description: 'A modern dashboard for Minehut.',
+
+                        background: {},
+
+                        content_scripts: [
+                            {
+                                js: [
+                                    'inject.js'
+                                ],
+                                matches: ['*://*.minehut.com/*'],
+                                run_at: 'document_start',
+                            },
+                        ],
+
+                        permissions: [
+                            '*://*.minehut.com/*',
+                        ],
+                    },
+
+                    browser_specific: {
+                        background: {
+                            scripts: ['background.js'],
+                            service_worker: 'background.js',
+                        },
+                    },
+                }),
                 new CopyPlugin({
                     patterns: [
                         {
