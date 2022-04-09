@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "ES6",
+        "moduleResolution": "Node",
+
+        "lib": [
+            "ES6",
+            "DOM",
+        ],
+
+        "strict": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+
+        "baseUrl": "src"
+    },
+
+    "include": [
+        "src/**/*"
+    ]
+}
