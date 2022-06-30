@@ -1,32 +1,16 @@
 {
     "name": "mh-reborn",
     "version": "0.1.0",
-    "description": "A browser extension that replaces the Minehut dashboard.",
+    "description": "A browser extension that improves the Minehut dashboard.",
+    "author": "AppleFlavored",
     "repository": {
         "type": "git",
         "directory": "https://github.com/AppleFlavored/mh-reborn.git"
     },
     "license": "MIT",
-    "private": true,
-    "scripts": {
-        "build": "webpack --mode=production",
-        "dev": "webpack --mode=development --watch"
-    },
+    "scripts": {},
+    "dependencies": {},
     "devDependencies": {
-        "@babel/core": "^7.17.9",
-        "@babel/preset-env": "^7.16.11",
-        "@babel/preset-typescript": "^7.16.7",
-        "@babel/register": "^7.17.7",
-        "@types/archiver": "^5.3.1",
-        "@types/node": "^17.0.23",
-        "archiver": "5.3.0",
-        "babel-loader": "^8.2.4",
-        "copy-webpack-plugin": "^10.2.4",
-        "fork-ts-checker-webpack-plugin": "^7.2.3",
-        "jsonpatch": "3.1.0",
-        "ts-loader": "^9.2.8",
-        "typescript": "^4.6.3",
-        "webpack": "^5.72.0",
-        "webpack-cli": "^4.9.2"
+        "typescript": "^4.7.4"
     }
 }

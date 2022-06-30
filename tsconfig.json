@@ -1,22 +1,14 @@
 {
     "compilerOptions": {
-        "module": "ES6",
-        "moduleResolution": "Node",
-
+        "module": "es2020",
+        "target": "es2020",
         "lib": [
-            "ES6",
             "DOM",
+            "ES2020"
         ],
-
-        "strict": true,
-        "noEmit": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-
-        "baseUrl": "src"
+        "rootDir": "src",
+        "outDir": "dist"
     },
-
-    "include": [
-        "src/**/*"
-    ]
+    "include": ["src"],
+    "exclude": ["node_modules"]
 }
