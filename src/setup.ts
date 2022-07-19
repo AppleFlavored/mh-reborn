@@ -7,6 +7,14 @@ document.addEventListener('readystatechange', () => {
             app.id = 'mhr-app';
             break;
         case 'complete':
+            // Disable existing stylesheets.
+            for (let i = 0; i < document.styleSheets.length; i++) {
+                const s = document.styleSheets.item(i);
+                if (!s.ownerNode.textContent.startsWith('/* Absolute')) {
+                    s.disabled = true;
+                }
+            }
+
             setTimeout(() => {
                 // If the children of app are not overriden after 10 seconds, the loader may have failed.
                 if (document.querySelector('div.full-loader')) {
