@@ -2,8 +2,8 @@ import commonjs from "@rollup/plugin-commonjs";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import typescript from "@rollup/plugin-typescript";
+import postcss from "rollup-plugin-postcss";
 import { defineConfig } from "rollup";
-import copy from "rollup-plugin-copy";
 
 export default defineConfig([
     {
@@ -13,12 +13,7 @@ export default defineConfig([
             format: 'iife'
         },
         plugins: [
-            typescript(),
-            copy({
-                targets: [
-                    { src: 'styles/*', dest: 'dist/css' }
-                ]
-            })
+            typescript()
         ]
     },
     {
@@ -34,7 +29,10 @@ export default defineConfig([
                 preventAssignment: true,
                 'process.env.NODE_ENV': JSON.stringify('production'),
             }),
-            typescript()
+            typescript(),
+            postcss({
+                extract: 'css/base.css'
+            })
         ]
     }
 ])

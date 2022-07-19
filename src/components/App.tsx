@@ -1,9 +1,11 @@
 import React from 'react';
+import Layout from './Layout';
+import '../../styles/base.css';
 
 export default function App() {
     return (
-        <div>
-            <p>Hello, world!</p>
-        </div>
+        <Layout>
+            <p>Something</p>
+        </Layout>
     );
 }
