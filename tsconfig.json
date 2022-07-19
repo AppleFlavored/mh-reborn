@@ -6,6 +6,8 @@
             "DOM",
             "ES2020"
         ],
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true,
         "rootDir": "src",
         "outDir": "dist"
     },

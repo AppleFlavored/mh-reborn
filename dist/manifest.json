@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "Minehut Reborn",
+    "version": "0.1.0",
+    "description": "A browser extension that improves the Minehut dashboard.",
+    "content_scripts": [
+        {
+            "matches": ["*://*.minehut.com/*"],
+            "js": ["setup.js"],
+            "css": ["css/base.css"],
+            "run_at": "document_start"
+        },
+        {
+            "matches": ["*://*.minehut.com/*"],
+            "js": ["loader.js"]
+        }
+    ]
+}

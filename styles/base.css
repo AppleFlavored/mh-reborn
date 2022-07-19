@@ -1,0 +1,20 @@
+.full-loader-bg:before {
+    background-color: #26262a !important;
+}
+
+.mhr-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #a33a3a;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    z-index: 40;
+}
+
+.mhr-error a {
+    color: white;
+    font-weight: bold;
+}
